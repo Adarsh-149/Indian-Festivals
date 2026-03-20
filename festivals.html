@@ -1,0 +1,1338 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Indian Festivals | INfesti India</title>
+
+<script>
+
+function toggleFeedback(){
+let form = document.getElementById("feedbackForm");
+
+if(form.style.display === "none" || form.style.display === ""){
+form.style.display = "block";
+}
+else{
+form.style.display = "none";
+}
+}
+
+function validateForm(){
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+
+let nameError = document.getElementById("nameError");
+let emailError = document.getElementById("emailError");
+
+let namePattern = /^[A-Za-z\s]+$/;
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+let valid = true;
+
+if(!namePattern.test(name)){
+nameError.textContent = "Please enter a valid name";
+valid = false;
+}
+else{
+nameError.textContent = "";
+}
+
+if(!emailPattern.test(email)){
+emailError.textContent = "Please enter a valid email";
+valid = false;
+}
+else{
+emailError.textContent = "";
+}
+
+if(valid){
+alert("Feedback Submitted Successfully!");
+document.querySelector("#feedbackForm form").reset();
+document.getElementById("feedbackForm").style.display="none";
+}
+
+return false;
+
+}
+
+</script>
+
+<style>
+
+/* GLOBAL */
+
+html{
+scroll-behavior:smooth;
+}
+
+.festival-nav{
+position:sticky;
+top:0;
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+z-index:1000;
+text-decoration:none;
+}
+
+.festival-nav a{
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+color:#e65100;
+}
+
+.festival-nav a:hover{
+color:#ff9800;
+}
+
+.festival{
+background:white;
+padding:40px;
+margin-bottom:60px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.divider{
+border:none;
+height:2px;
+background:linear-gradient(to right,#ff9800,#e65100);
+margin:60px 0;
+}
+
+body{
+margin:0;
+font-family:"Segoe UI", Arial, sans-serif;
+background:#faf7f2;
+color:#333;
+line-height:1.7;
+}
+
+body{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+/* FESTIVAL TITLE */
+
+h1{
+color:#e65100;
+margin-top:80px;
+font-size:2.8rem;
+border-bottom:3px solid #ff9800;
+padding-bottom:8px;
+letter-spacing:1px;
+}
+
+/* FESTIVAL SUBTITLE */
+
+h1 + p{
+font-size:1.2rem;
+color:#666;
+margin-top:-10px;
+margin-bottom:25px;
+font-style:italic;
+}
+
+/* SECTION HEADINGS */
+
+h2{
+color:#bf360c;
+margin-top:30px;
+margin-bottom:10px;
+border-left:5px solid #ff9800;
+padding-left:10px;
+}
+
+h4,h5{
+color:#e65100;
+}
+
+/* PARAGRAPHS */
+
+p{
+margin-bottom:14px;
+font-size:1.05rem;
+}
+
+/* IMAGES */
+
+img{
+display:block;
+margin:20px auto;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:transform 0.4s;
+}
+
+.hero-img{
+width:100%;
+max-height:500px;
+object-fit:cover;
+border-radius:12px;
+}
+
+img:hover{
+transform:scale(1.04);
+}
+
+/* VIDEO */
+
+video{
+object-fit:cover;
+margin:20px auto;
+border-radius:10px;
+display:block;
+}
+
+/* LISTS */
+
+ul,ol{
+margin-left:25px;
+line-height:1.9;
+}
+
+/* BACK TO TOP */
+
+a[href="#top"]{
+display:inline-block;
+margin-top:20px;
+background:#ff7043;
+color:white;
+padding:10px 18px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+a[href="#top"]:hover{
+background:#e64a19;
+transform:scale(1.05);
+}
+
+ul li a{
+text-decoration:none;
+color:blue;
+}
+
+/* REFERENCES */
+
+h2 + ul{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+max-width:800px;
+}
+
+/* FOOTER */
+
+footer{
+background:#1f1f1f;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:60px;
+border-radius:10px;
+}
+
+section{
+margin-bottom:80px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+body{
+padding:25px 6%;
+}
+
+h1{
+font-size:2rem;
+}
+
+.festival-intro{
+text-align:center;
+margin-bottom:40px;
+}
+
+.festival-intro h2{
+color:#e65100;
+font-size:2.2rem;
+margin-bottom:10px;
+}
+
+.festival-intro p{
+max-width:700px;
+margin:auto;
+color:#555;
+line-height:1.6;
+}
+
+.festival-container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.festival-menu{
+background:#f2f2f2;
+padding:15px;
+border-radius:8px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-bottom:30px;
+}
+
+.festival-menu a{
+text-decoration:none;
+color:#e65100;
+font-weight:600;
+}
+
+.festival-menu a:hover{
+background:#ff9800;
+color:white;
+padding:5px 10px;
+border-radius:5px;
+transition:0.3s;
+}
+
+.festival-intro{
+margin-bottom:40px;
+background:#f7f7f7;
+}
+
+.festival-intro h2{
+color:#e65100;
+font-size:2rem;
+margin-bottom:10px;
+border-left:6px solid #ff9800;
+padding-left:10px;
+}
+
+}
+
+/* FEEDBACK FORM */
+
+.feedback-btn{
+display:block;
+margin:40px auto;
+background:#ff7043;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+}
+
+.feedback-btn:hover{
+background:#e64a19;
+}
+
+.feedback-container{
+max-width:500px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+display:none;
+animation:fadeIn 0.6s ease;
+}
+
+.feedback-container form{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.feedback-container input,
+.feedback-container select,
+.feedback-container textarea{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.feedback-container button{
+background:#ff7043;
+color:white;
+border:none;
+padding:10px;
+border-radius:20px;
+cursor:pointer;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body id="top">
+
+<nav class="festival-nav">
+
+<a href="#diwali">Diwali</a>
+<a href="#holi">Holi</a>
+<a href="#pongal">Pongal</a>
+<a href="#onam">Onam</a>
+<a href="#ganesh">Ganesh Chaturthi</a>
+<a href="#eid">Eid</a>
+<a href="#christmas">Christmas</a>
+<a href="#navratri">Navratri</a>
+<a href="#dussehra">Dussehra</a>
+<a href="#sankranti">Makar Sankranti</a>
+
+</nav>
+
+<section class="festival">
+
+    <h2>Festivals of India</h2>
+
+    <p>
+        Discover the rich traditions and colorful celebrations that bring
+        people together across India. Each festival represents culture,
+        faith, and joy shared by millions.
+    </p>
+
+
+    <!-- Diwali -->
+
+    <h1 id="diwali">Diwali</h1>
+    <p>Festival of Lights</p>
+
+    <img class="hero-img" src="hero.jpg" alt="Diwali">
+
+    <h2>About Diwali</h2>
+
+    <p>
+        Diwali, widely known as the Festival of Lights, is one of the most celebrated festivals in India.
+        It symboilzes the triumph of light over darkness, knowledge over ignorance, and good over evil.
+        The festival is observed by millions of people across the country and around the world.
+    </p>
+
+    <p>
+        Diwali has deep mythological roots. In hindu tradition, it marks the return of Lord Rama to Ayodhya
+        after defeating Ravana. In other regions, it is associated with the worship of Goddess Lakshmi,
+        the deity of wealth and prosperity. Though the stories may differ, the message remains universal
+        hope always overcome despair.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Diwali is celebrated in October or November according to the Hindu lunar calendar,
+        on the new moon night (Amavasya) of Kartika month.
+    </p>
+
+    <h2>Mythological Background</h2>
+
+    <p>
+        Diwali is most commonly associated with the return of Lord Rama to Ayodhya after fourteen
+        years of exile and his victory over the demon king Ravana. The people of Ayodhya welcomed
+        him by lighting rows of oil lamps (diyas), symbolizing the triumph of good over evil and
+        light over darkness.
+    </p>
+
+    <p>
+        In many regions, Diwali is also linked to the worship of Goddess Lakshmi, who represents
+        wealth and prosperity. It is believed that on this night, she blesses homes that are clean,
+        bright, and filled with devotion.
+    </p>
+
+    <p>
+        In parts of South India, the festival commemorates Lord Krishna’s victory over the demon
+        Narakasura, symbolizing the destruction of evil forces.
+    </p>
+
+    <h2>How it is Celebrated</h2>
+
+    <p>
+        During Diwali, homes are cleaned and decorated with colorful rangoli patterns and oil lamps
+        known as diyas. Families gather to perform Lakshmi puja, exchange sweets and gifts,
+        and enjoy festive meals together.
+    </p>
+
+    <p>
+        At night, fireworks illuminate the sky, creating a vibrant and joyful atmosphere. Markets
+        are filled with lights, decorations, and traditional sweets, adding to the festive spirit.
+    </p>
+
+    <img class="hero-img" src="diwalicelebration.jpg">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Beyond its religious importance, Diwali represents renewal and togetherness. It is time for
+        forgiveness, gratitude, and strengthing bonds with family and community. The festival
+        encourages people to let go of negativity and welcome positivity into their lives.
+    </p>
+
+    <p>
+        Diwali is not just a celebration, it is a reminder that even the smallest light can dispel darkness
+    </p>
+
+    <video controls width="1000" height="550">
+        <source src="Diwali Varanasi.mp4" type="video/mp4">
+    </video>
+
+    <hr class="divider">
+
+
+    <!-- Holi -->
+
+    <h1 id="holi">Holi</h1>
+    <p>Festival of Colors, Joy, and Renewal</p>
+
+    <img src="Holi8.jpg" height="450" width="1000" alt="Holi">
+
+    <h2>About Holi</h2>
+
+    <p>
+        Holi, popularly known as the Festival of Colors, is one of the most vibrant and joyous
+        celebrations in India. It marks the arrival of spring and symbolizes the triumph of
+        good over evil. The festival is deeply rooted in Hindu mythology and is associated
+        with the story of Prahlad and Holika, representing the victory of devotion and righteousness.
+    </p>
+
+    <p>
+        Holi is not just a religious observance but also a social celebration that brings
+        people together. It transcends barriers of caste, class, and age, encouraging
+        harmony and togetherness across communities.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Holi is celebrated in March during the full moon day (Purnima) of the Phalguna month.
+    </p>
+
+    <h2>Mythological Background</h2>
+
+    <p>
+        The festival commemorates the legend of Prahlad, a devotee of Lord Vishnu, who was
+        protected from the evil intentions of King Hiranyakashipu and his sister Holika.
+        The burning of Holika symbolizes the destruction of evil forces and the protection
+        of faith.
+    </p>
+
+    <p>
+        The night before Holi is marked by Holika Dahan, where bonfires are lit to signify
+        purification and the burning away of negativity.
+    </p>
+
+    <h2>How It Is Celebrated</h2>
+
+    <p>
+        On the main day of Holi, people gather in open spaces to play with colored powders
+        (gulal) and water. Music, dance, and festive sweets like gujiya and thandai add
+        to the excitement.
+    </p>
+
+    <p>
+        Children and adults alike participate enthusiastically, smearing colors on each
+        other’s faces as a gesture of love and friendship. Streets become filled with
+        laughter, music, and vibrant hues.
+    </p>
+
+    <img src="Holi10.jpg" alt="holi10" height="570" width="1000">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Children and adults alike participate enthusiastically, smearing colors on each
+        other’s faces as a gesture of love and friendship. Streets become filled with
+        laughter, music, and vibrant hues.
+    </p>
+
+    <p>
+        Beyond its religious origins, Holi has evolved into a global celebration,
+        admired for its colorful spirit and message of unity.
+    </p>
+
+    <video controls width="1000" height="550">
+        <source src="Holi.mp4">
+    </video>
+
+    <hr class="divider">
+
+
+    <!-- Pongal -->
+
+    <h1 id="pongal">Pongal</h1>
+    <p>Festival of Harvest and Gratitude</p>
+
+    <img src="pongal4.jpg" height="500" width="300" alt="Pongal">
+
+    <h2>About Pongal</h2>
+
+    <p>
+        Pongal is a traditional harvest festival celebrated primarily in Tamil Nadu
+        and other parts of South India. It is dedicated to the Sun God (Surya) and
+        expresses gratitude for a successful harvest season. The festival reflects
+        the deep connection between agriculture, nature, and human life.
+    </p>
+
+    <p>
+        Pongal usually falls in the month of January and marks the beginning of the
+        Tamil month “Thai,” symbolizing new beginnings and prosperity.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Pongal is celebrated from January 14 to January 17 every year.
+    </p>
+
+    <h2>Historical and Cultural Background</h2>
+
+    <p>
+        Pongal has ancient roots dating back to the Sangam period. It is closely tied
+        to farming traditions and rural life. The word “Pongal” means “to overflow,”
+        referring to the boiling over of rice during the special dish preparation —
+        a symbol of abundance and prosperity.
+    </p>
+
+    <h4>The festival spans four days</h4>
+
+    <ol>
+        <li><strong>Bhogi Pongal-</strong>Cleaning homes and discarding old items.</li>
+        <li><strong>Surya Pongal-</strong>Main day dedicated to the Sun God.</li>
+        <li><strong>Mattu Pongal-</strong>Honoring cattle for their role in agriculture.</li>
+        <li><strong>Kannum Pongal-</strong>Family gatherings and social visits</li>
+    </ol>
+
+    <h2>How it is Celebrated</h2>
+
+    <p>
+        The highlight of Pongal is the preparation of the special dish called Pongal,
+        made from freshly harvested rice, milk, and jaggery. It is cooked in decorated
+        clay pots as families gather and pray for prosperity.
+    </p>
+
+    <p>
+        Homes are decorated with colorful kolam (rangoli) patterns at the entrance.
+        Farmers decorate their cattle with garlands and paint, showing respect and
+        gratitude.
+    </p>
+
+    <p>
+        traditional music, dance, and cultural events bring villages and towns alive
+        with festive energy.
+    </p>
+
+    <img src="pongal3.jpg" height="500" width="830" alt="Pongal1">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Pongal represents gratitude toward nature, the Sun, cattle, and the earth.
+        It reminds people of the importance of agriculture and the hard work of farmers.
+    </p>
+
+    <p>
+        The festival promotes harmony between humans and nature, celebrating abundance
+        and collective well-being.
+    </p>
+
+    <video controls height="550" width="430">
+        <source src="Pongal celebration.mp4">
+    </video>
+
+    <hr class="divider">
+        <!-- Onam -->
+
+    <h1 id="onam">Onam</h1>
+    <p>Festival of Prosperity and Harmony</p>
+
+    <img src="onam1.jpg" height="500" width="920" alt="Onam">
+
+    <h2>About Onam</h2>
+
+    <p>
+        Onam is a major harvest festival celebrated in the state of Kerala.
+        It commemorates the annual return of the legendary King Mahabali,
+        whose reign was known as a golden era of peace, prosperity, and equality.
+    </p>
+
+    <p>
+        The festival usually falls in the months of August or September and lasts for ten days.
+        Onam is not only a religious celebration but also a cultural event that unites
+        people of all communities in Kerala.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Onam is celebrated in August or September during the Malayalam month of Chingam.
+    </p>
+
+    <h2>Mythological Background</h2>
+
+    <p>
+        According to legend, King Mahabali was a generous and beloved ruler.
+        However, his growing power concerned the gods. Lord Vishnu, in the form of
+        Vamana (a dwarf Brahmin), requested three steps of land from Mahabali.
+        With two steps, Vamana covered the earth and sky, and for the third step,
+        Mahabali offered his own head.
+    </p>
+
+    <p>
+        Impressed by his devotion and humility, Lord Vishnu granted him permission
+        to visit his people once every year. Onam celebrates this annual homecoming
+        of King Mahabali.
+    </p>
+
+    <h2>How it is Celebrated</h2>
+
+    <h5>Onam is celebrated with great enthusiasm and vibrant traditions</h5>
+
+    <ul>
+        <li>Homes are decorated with pookalam (intricate floral rangoli designs).</li>
+        <li>Families prepare a grand feast known as Onam Sadya, served on banana leaves.</li>
+        <li>Traditional boat races (Vallam Kali) are organized.</li>
+        <li>Cultural performances like Kathakali and Pulikali take place.</li>
+    </ul>
+
+    <p>
+        People wear traditional attire and gather with friends and family
+        to celebrate together.
+    </p>
+
+    <img src="onam2.jpeg" height="500" width="850" alt="Onam">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Onam symbolizes unity, prosperity, and cultural pride.
+        It reflects Kerala’s rich traditions and communal harmony.
+    </p>
+
+    <p>
+        The festival teaches values of humility, generosity, and equality,
+        inspired by the character of King Mahabali.
+    </p>
+
+    <p>
+        Onam is not just a celebration of harvest — it is a celebration
+        of shared identity and joy.
+    </p>
+
+    <video controls height="500" width="900">
+        <source src="Onam.mp4">
+    </video>
+
+    <hr class="divider">
+
+
+    <!-- Ganesh Chaturthi -->
+
+    <h1 id="ganesh">Ganesh Chaturthi</h1>
+    <p>Festival of Devotion and New Beginnings</p>
+
+    <img src="ganesh.jpeg" height="" width="950" alt="Ganesh Chaturthi">
+
+    <h2>About Ganesh Chaturthi</h2>
+
+    <p>
+        Ganesh Chaturthi is a widely celebrated Hindu festival that marks
+        the birth of Lord Ganesha, the remover of obstacles and the god of
+        wisdom and prosperity. The festival is especially popular in Maharashtra
+        but is celebrated across India with great devotion.
+    </p>
+
+    <p>
+        It usually falls in the month of August or September and lasts for
+        ten days, ending with the grand immersion ceremony known as
+        Ganpati Visarjan.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Ganesh Chaturthi is celebrated in August or September on the fourth day
+        (Chaturthi) of the Bhadrapada month.
+    </p>
+
+    <h2>Mythological Background</h2>
+
+    <p>
+        According to Hindu mythology, Goddess Parvati created Ganesha from
+        sandalwood paste to guard her while she bathed. When Lord Shiva returned
+        and was denied entry, he unknowingly beheaded the child. Realizing his
+        mistake, Shiva revived him by placing the head of an elephant on his body,
+        giving birth to Lord Ganesha.
+    </p>
+
+    <p>
+        Because of this, Ganesha is worshipped first before beginning any new
+        venture, symbolizing wisdom and removal of obstacles.
+    </p>
+
+    <h2>How It Is Celebrated</h2>
+
+    <p>
+        The festival begins with the installation of beautifully crafted idols
+        of Lord Ganesha in homes and public pandals. Devotees offer prayers,
+        chant hymns, and perform aarti daily.
+    </p>
+
+    <p>
+        Homes are decorated, and sweets like modak — believed to be Ganesha’s
+        favorite — are prepared.
+    </p>
+
+    <p>
+        On the final day, grand processions take place, and idols are immersed
+        in water bodies with chants of “Ganpati Bappa Morya,” symbolizing
+        farewell and the promise of return next year.
+    </p>
+
+    <img src="ganesh3.jpg" height="600" width="800" alt="Ganesh Chaturthi">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Ganesh Chaturthi promotes unity and community bonding.
+        Public celebrations bring people together beyond social differences.
+    </p>
+
+    <p>
+        The festival teaches values of wisdom, humility, devotion,
+        and the importance of new beginnings.
+    </p>
+
+    <p>
+        It is not just a celebration of a deity — it is a celebration
+        of faith and collective joy.
+    </p>
+
+    <video controls height="550" width="500">
+        <source src="Ganesh2.mp4">
+    </video>
+
+    <hr class="divider">
+
+
+    <!-- Eid-ul-Fitr -->
+
+    <h1 id="eid">Eid-ul-Fitr</h1>
+    <p>Festival of Gratitude and Compassion</p>
+
+    <img src="eid3.jpg" height="600" width="850" alt="Eid-ul-Fitr">
+
+    <h2>About Eid-ul-Fitr</h2>
+
+    <p>
+        Eid-ul-Fitr is one of the most important festivals in Islam.
+        It marks the end of Ramadan, the holy month of fasting,
+        prayer, and spiritual reflection. The festival is celebrated
+        by Muslims around the world with joy and gratitude.
+    </p>
+
+    <p>
+        Eid begins with the sighting of the new moon and symbolizes
+        renewal, self-discipline, and devotion.
+    </p>
+
+    <p>
+        When it is celebrated:<br>
+        Eid-ul-Fitr is celebrated after the sighting of the new moon
+        marking the end of Ramadan.
+    </p>
+
+    <h2>Spiritual Background</h2>
+
+    <p>
+        During Ramadan, Muslims fast from dawn to sunset,
+        practicing self-control and empathy for those in need.
+        It is a time of prayer, charity, and strengthening faith.
+    </p>
+
+    <p>
+        Eid-ul-Fitr celebrates the successful completion of
+        this sacred month. It is a day of thanksgiving to Allah
+        for providing strength and guidance.
+    </p>
+
+    <h2>How It Is Celebrated</h2>
+
+    <p>
+        The day begins with a special prayer known as Eid Salah,
+        offered in mosques or large open grounds. Before the prayer,
+        Muslims give Zakat al-Fitr, a form of charity to help
+        the less fortunate.
+    </p>
+
+    <p>
+        Families wear new clothes, visit relatives, and greet
+        each other with “Eid Mubarak.” Special dishes and sweets
+        like Sheer Khurma are prepared and shared.
+    </p>
+
+    <p>
+        The atmosphere is filled with joy, generosity, and unity.
+    </p>
+
+    <img src="Eid.jpg" height="550" width="850" alt="Eid-ul-Fitr">
+
+    <h2>Cultural Significance</h2>
+
+    <p>
+        Eid emphasizes compassion, equality, and community bonding.
+        It encourages forgiveness, gratitude, and generosity.
+    </p>
+
+    <p>
+        The festival reminds people of the importance of caring
+        for others and strengthening relationships within society.
+    </p>
+
+    <p>
+        Eid-ul-Fitr is not only a religious celebration —
+        it is a celebration of humanity and kindness.
+    </p>
+
+    <video controls width="400" height="550">
+        <source src="Eid.mp4">
+    </video>
+
+    <hr class="divider">
+    <!-- Christmas -->
+
+<h1 id="christmas">Christmas</h1>
+<p>Festival of Joy, Peace, and Giving</p>
+
+<img src="christmas7.jpg" width="980" height="580" alt="Christmas">
+
+<h2>About Christmas</h2>
+
+<p>
+Christmas is a widely celebrated festival that commemorates the birth of Jesus Christ.
+Observed on December 25th, it is one of the most significant festivals in Christianity
+and is celebrated around the world, including in many parts of India.
+</p>
+
+<p>
+Beyond its religious meaning, Christmas has become a global celebration of joy,
+love, and goodwill.
+</p>
+
+<p>
+When it is celebrated:<br/>
+Christmas is celebrated every year on December 25.
+</p>
+
+<h2>Historical and Spiritual Background</h2>
+
+<p>
+According to Christian belief, Jesus Christ was born in Bethlehem to bring hope,
+peace, and salvation to humanity. His birth is seen as a symbol of divine love
+and compassion.
+</p>
+
+<p>
+Christmas celebrates this message of kindness, forgiveness, and generosity,
+encouraging people to spread goodwill toward others.
+</p>
+
+<h2>How It Is Celebrated</h2>
+
+<p>
+Homes and churches are decorated with lights, stars, and Christmas trees.
+People attend midnight Mass, sing carols, and exchange gifts with family and friends.
+</p>
+
+<p>
+Children eagerly await the arrival of Santa Claus, who symbolizes the spirit of giving.
+Special dishes and cakes are prepared, and families gather to celebrate together.
+</p>
+
+<p>
+In India, Christmas is celebrated with cultural diversity, blending local traditions
+with Christian customs.
+</p>
+
+<img src="christmas10.jpg" width="940" height="580" alt="christmas10">
+
+<h2>Cultural Significance</h2>
+
+<p>
+Christmas promotes values of love, peace, and unity. It is a time to strengthen family
+bonds and extend kindness to those in need.
+</p>
+
+<p>
+The festival encourages people to reflect on compassion, gratitude, and the importance
+of sharing happiness.
+</p>
+
+<p>
+Christmas is not only a religious celebration — it is a celebration of hope and harmony.
+</p>
+
+<video controls height="550" width="350">
+<source src="Christmas.mp4">
+</video>
+
+<hr class="divider">
+
+
+<!-- Navratri -->
+
+<h1 id="navratri">Navratri</h1>
+<p>Festival of Devotion and Divine Energy</p>
+
+<img src="navratri.jpg" height="570" width="1000" alt="Navratri">
+
+<h2>About Navratri</h2>
+
+<p>
+Navratri is a major Hindu festival dedicated to Goddess Durga and her nine divine forms.
+The word “Navratri” means “nine nights,” and the festival is celebrated over nine days
+and nights, usually in September or October.
+</p>
+
+<p>
+It symbolizes the victory of good over evil and the power of the divine feminine (Shakti).
+</p>
+
+<p>
+When it is celebrated:<br/>
+Navratri is celebrated in September or October for nine nights.
+</p>
+
+<h2>Mythological Background</h2>
+
+<p>
+Navratri commemorates the victory of Goddess Durga over the demon Mahishasura.
+According to legend, the demon had received a blessing that no man could defeat him.
+To restore balance, Goddess Durga was created by the combined energies of the gods
+and ultimately defeated Mahishasura after nine nights of battle.
+</p>
+
+<p>
+These nine nights represent the triumph of righteousness and strength.
+</p>
+
+<h2>How It Is Celebrated</h2>
+
+<p>
+Devotees observe fasts, perform prayers, and visit temples dedicated to Goddess Durga.
+Each day is devoted to a different form of the goddess.
+</p>
+
+<p>
+In many regions, especially Gujarat and parts of North India, people celebrate with
+vibrant Garba and Dandiya Raas dances. Traditional music, colorful attire, and
+community gatherings create a joyful atmosphere.
+</p>
+
+<p>
+The festival concludes with Dussehra, marking the ultimate victory of good over evil.
+</p>
+
+<img src="navratri11.jpg" height="560" width="950" alt="navratri11">
+
+<h2>Cultural Significance</h2>
+
+<p>
+Navratri celebrates strength, devotion, and the power of positivity.
+It emphasizes discipline, faith, and inner spiritual growth.
+</p>
+
+<p>
+The festival also highlights the importance of respecting and honoring feminine
+energy in society.
+</p>
+
+<p>
+Navratri is not just a ritual — it is a celebration of courage and divine grace.
+</p>
+
+<video controls height="550" width="400">
+<source src="Navratri.mp4">
+</video>
+
+<hr class="divider">
+
+
+<!-- Dussehra -->
+
+<h1 id="dussehra">Dussehra(Vijayadashami)</h1>
+<p>Triumph of Good Over Evil</p>
+
+<img src="dussehra2.jpg" height="600" width="650" alt="Dussehra">
+
+<h2>About Dussehra</h2>
+
+<p>
+Dussehra, also known as Vijayadashami, is a major Hindu festival celebrated on the
+tenth day after Navratri. The name “Vijayadashami” means “the tenth day of victory.”
+</p>
+
+<p>
+It symbolizes the triumph of good over evil and righteousness over injustice.
+The festival is celebrated across India with regional variations and great enthusiasm.
+</p>
+
+<p>
+When it is celebrated:<br/>
+Dussehra is celebrated on the tenth day after Navratri, usually in October.
+</p>
+
+<h2>Mythological Background</h2>
+
+<p>Dussehra is associated with two major legends:</p>
+
+<h5>1.Lord Rama's Victory</h5>
+
+<p>
+In North India, Dussehra marks the victory of Lord Rama over the demon king Ravana
+after a long battle. This story is narrated in the epic Ramayana.
+</p>
+
+<h5>2.Goddess Durga’s Victory</h5>
+
+<p>
+In many regions, it also celebrates Goddess Durga’s victory over Mahishasura,
+marking the end of Navratri
+</p>
+
+<p>
+Both stories carry the same message — evil may rise, but truth and goodness
+ultimately prevail.
+</p>
+
+<h2>How It Is Celebrated</h2>
+
+<p>
+In North India, large effigies of Ravana, Meghnath, and Kumbhakarna are burned
+in open grounds. The burning symbolizes the destruction of evil forces.
+</p>
+
+<p>
+Ramleela performances — dramatic enactments of the Ramayana — are staged during
+the days leading up to Dussehra.
+</p>
+
+<p>
+In West Bengal, Dussehra marks the immersion of Durga idols after Durga Puja celebrations.
+</p>
+
+<p>
+The day is also considered auspicious for starting new ventures and learning new skills.
+</p>
+
+<img src="dussehra.jpeg" height="600" width="600" alt="Dussehra">
+
+<h2>Cultural Significance</h2>
+
+<p>
+Dussehra reinforces moral values and the importance of truth, courage, and justice.
+It reminds people that arrogance and wrongdoing eventually lead to downfall.
+</p>
+
+<p>
+The festival encourages self-reflection — burning the “inner Ravana” such as anger,
+ego, greed, and jealousy.
+</p>
+
+<p>
+Dussehra is not just a celebration of mythological victory — it is a reminder
+of ethical living.
+</p>
+
+<video controls width="350" height="550">
+<source src="Dussehra.mp4">
+</video>
+
+<hr class="divider">
+<!-- Makar Sankranti -->
+
+<h1 id="sankranti">Makar Sankranti</h1>
+<p>Festival of the Sun and New Beginnings</p>
+
+<img src="sankranti.jpg" width="930" height="550" alt="Makar Sankranti">
+
+<h2>About Makar Sankranti</h2>
+
+<p>
+Makar Sankranti is a major Hindu festival celebrated across India,
+marking the transition of the Sun into the zodiac sign Capricorn (Makara).
+Unlike many Indian festivals that follow the lunar calendar,
+Makar Sankranti is based on the solar calendar and usually falls on January 14th every year.
+</p>
+
+<p>
+The festival signifies the end of winter and the beginning of longer,
+warmer days. It is considered highly auspicious and symbolizes renewal,
+positivity, and fresh beginnings.
+</p>
+
+<p>
+When it is celebrated:<br/>
+Makar Sankranti is celebrated on January 14 every year.
+</p>
+
+<h2>Astronomical Significance</h2>
+
+<p>
+Makar Sankranti marks the Sun’s northward journey, known as Uttarayan.
+This transition is believed to bring prosperity, light, and spiritual growth.
+</p>
+
+<p>
+The movement of the Sun into Capricorn holds special importance in Indian
+tradition, representing progress and enlightenment.
+</p>
+
+<h2>How It Is Celebrated</h2>
+
+<p>Celebrations vary across regions:</p>
+
+<ul>
+<li>In Gujarat, people fly colorful kites in a festival known as Uttarayan.</li>
+<li>In Punjab, it is celebrated as Lohri with bonfires and traditional dances.</li>
+<li>In Assam, it is known as Magh Bihu with feasts and cultural performances.</li>
+<li>In many parts of India, people take holy dips in rivers like the Ganga.</li>
+</ul>
+
+<p>
+Traditional sweets made of sesame seeds (til) and jaggery are prepared
+and shared, symbolizing warmth and unity.
+</p>
+
+<img src="sankranti2.jpg" width="930" height="550" alt="Sankranti">
+
+<h2>Cultural Significance</h2>
+
+<p>
+Makar Sankranti represents gratitude toward the Sun, nature,
+and agricultural prosperity. It emphasizes harmony between humans
+and the natural world.
+</p>
+
+<p>
+The festival also symbolizes leaving behind negativity and embracing
+new opportunities with hope and determination.
+</p>
+
+<video controls width="350" height="550">
+<source src="makara sankranti.mp4">
+</video>
+
+<br/>
+
+</section>
+
+
+<a href="#top">Back to Top</a>
+
+<br/>
+
+
+<button onclick="toggleFeedback()" class="feedback-btn">
+Festival Feedback
+</button>
+
+
+<section id="feedbackForm" class="feedback-container">
+
+<h2>Festival Feedback</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name:</label>
+<input type="text" id="name" required>
+<span id="nameError" style="color:red;font-size:14px;"></span>
+
+<label>Email:</label>
+<input type="email" id="email" required>
+<span id="emailError" style="color:red;font-size:14px;"></span>
+
+<label>Your Favorite Festival:</label>
+
+<select>
+<option>Diwali</option>
+<option>Holi</option>
+<option>Pongal</option>
+<option>Onam</option>
+<option>Ganesh Chaturthi</option>
+<option>Eid</option>
+<option>Christmas</option>
+<option>Navratri</option>
+<option>Dussehra</option>
+<option>Makar Sankranti</option>
+</select>
+
+<label>Your Feedback:</label>
+
+<textarea rows="4"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</section>
+
+
+<h2>References</h2>
+
+<ul>
+
+<li>
+<a href="https://en.wikipedia.org/wiki/Festivals_in_India"
+target="_blank"
+rel="noopener"
+style="text-decoration:none;color:blue";>
+Festivals of India - Wikipedia
+</a>
+</li>
+
+<li>
+<a href="https://www.incredibleindia.gov.in" target="_blank">
+Incredible India – Official Tourism Website
+</a>
+</li>
+
+<li>
+<a href="https://pixabay.com" target="_blank">
+Festival Images – Pixabay
+</a>
+</li>
+
+<li>
+<a href="https://unsplash.com" target="_blank">
+Festival Images – Unsplash
+</a>
+</li>
+
+</ul>
+
+
+<footer>
+<p>© 2026 FestiIndia – Educational Project</p>
+</footer>
+
+</body>
+</html>
